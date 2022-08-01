@@ -1,11 +1,8 @@
-package com.step.hryshkin.dao;
+package com.step.hryshkin.service;
 
 import com.step.hryshkin.model.OrderGood;
 
-import java.util.Optional;
-
-public interface OrderGoodDAO {
+public interface OrderGoodService {
 
     void createNewOrderGoodDAO(OrderGood orderGood);
-
 }

@@ -7,6 +7,6 @@ import org.springframework.context.annotation.PropertySource;
 @Configuration
 
 @ComponentScan("com.step.hryshkin")
-@PropertySource("classpath:scripts/dataBase.properties")
+@PropertySource("classpath:dataBase.properties")
 public class SpringConfiguration {
 }

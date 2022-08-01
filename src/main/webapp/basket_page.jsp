@@ -3,7 +3,8 @@
 <%@ page import="com.step.hryshkin.model.User"%>
 <%@ page import="com.step.hryshkin.model.Order"%>
 <%@ page import="com.step.hryshkin.utils.UtilsForOnlineShop"%>
-<%@ page import="com.step.hryshkin.service.impl.OrderServiceImpl"%>
+<%@ page import="com.step.hryshkin.service.OrderService"%>
+<%@ page import="com.step.hryshkin.config.ContextInitializer"%>
 
 <html lang="en">
 <head>
@@ -29,9 +30,14 @@ background: gray;
                 <li>${item}</li>
             </c:forEach>
          </ol>
-    <h4>Сумма: <%= new OrderServiceImpl().printTotalPriceForOrder(((Order) request.getSession().getAttribute("order")).getId()) %> </h4>
+    <h4>Сумма: <%=ContextInitializer
+    .getContext()
+    .getBean(OrderService.class)
+    .printTotalPriceForOrder(((Order) request.getSession()
+    .getAttribute("order"))
+    .getId()) %> </h4>
 </div>
-    <form action="/user_check_page.jsp" method="post">
+    <form action="/index.jsp" method="post">
         <p align="center"><input type="submit" value="вернуться на главную"></p>
     </form>
 

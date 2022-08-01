@@ -33,8 +33,7 @@ public class GoodDAOImpl implements GoodDAO {
                 }
             }
         } catch (SQLException throwable) {
-            LOGGER.error("SQLException at UserDAOImpl at CreateNewUser" + throwable);
-
+            LOGGER.error("SQLException at GoodDAOImpl at getByTitle" + throwable);
         }
         return good;
     }
@@ -52,7 +51,7 @@ public class GoodDAOImpl implements GoodDAO {
                 }
             }
         } catch (SQLException throwable) {
-            LOGGER.error("SQLException in method getID" + throwable);
+            LOGGER.error("SQLException at GoodDAOImpl in method getById" + throwable);
         }
         return good;
     }

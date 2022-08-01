@@ -34,11 +34,6 @@ public class OrderDAOImpl implements OrderDAO {
     }
 
     @Override
-    public Optional<Order> getOrderById(long id) {
-        return Optional.empty();
-    }
-
-    @Override
     public Optional<Order> getLastOrder() {
         Optional<Order> order = Optional.empty();
         try (Connection connection = Connector.createConnection()) {
@@ -91,5 +86,4 @@ public class OrderDAOImpl implements OrderDAO {
         }
         return totalPrice;
     }
-
 }

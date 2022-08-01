@@ -2,11 +2,12 @@ package com.step.hryshkin.service.impl;
 
 import com.step.hryshkin.config.Connector;
 import com.step.hryshkin.dao.UserDAO;
-import com.step.hryshkin.dao.impl.UserDAOImpl;
 import com.step.hryshkin.model.User;
 import com.step.hryshkin.service.UserService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
 import java.sql.Connection;
@@ -15,9 +16,15 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Optional;
 
+@Service
 public class UserServiceImpl implements UserService {
     private static final Logger LOGGER = LogManager.getLogger(UserServiceImpl.class);
-    private static final UserDAO userDAO = new UserDAOImpl();
+    private final UserDAO userDAO;
+
+    @Autowired
+    public UserServiceImpl(UserDAO userDAO) {
+        this.userDAO = userDAO;
+    }
 
     @Override
     public String printTotalPriceForCurrentUser(String userName) {
@@ -44,4 +51,13 @@ public class UserServiceImpl implements UserService {
         return totalPrice.toString();
     }
 
+    @Override
+    public void createNewUser(User user) {
+        userDAO.createNewUser(user);
+    }
+
+    @Override
+    public Optional<User> getUserByName(String userName) {
+        return userDAO.getUserByName(userName);
+    }
 }

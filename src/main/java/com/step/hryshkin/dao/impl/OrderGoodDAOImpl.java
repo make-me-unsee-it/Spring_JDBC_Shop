@@ -16,7 +16,6 @@ import java.util.Optional;
 public class OrderGoodDAOImpl implements OrderGoodDAO {
     private static final Logger LOGGER = LogManager.getLogger(OrderGoodDAOImpl.class);
 
-
     @Override
     public void createNewOrderGoodDAO(OrderGood orderGood) {
         try (Connection connection = Connector.createConnection()) {
@@ -29,10 +28,5 @@ public class OrderGoodDAOImpl implements OrderGoodDAO {
         } catch (SQLException throwable) {
             LOGGER.error("SQLException at OrderGoodDAOImpl at CreateNewOrderGood" + throwable);
         }
-    }
-
-    @Override
-    public Optional<OrderGood> getOrderGoodById(long id) {
-        return Optional.empty();
     }
 }

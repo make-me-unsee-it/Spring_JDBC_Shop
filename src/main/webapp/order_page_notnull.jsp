@@ -39,7 +39,7 @@ background: gray;
             </c:forEach>
          </ol>
 </div>
-    <form action="/order_page.jsp" method="post">
+    <form action="/basket_page.jsp" method="post">
         <p align="center"><input type="submit" value="заказать"></p>
     </form>
 </body>
