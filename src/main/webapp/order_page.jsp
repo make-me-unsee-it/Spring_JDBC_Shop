@@ -34,7 +34,7 @@ background: gray;
 <div align="center">
     <h4>Ваша корзина:</h4>
          <ol style="display: table; margin:0 auto;">
-            <c:forEach items="${UtilsForOnlineShop.printGoodsForCurrentOrder(order.getId())}" var="item" >
+            <c:forEach items="${goodListForCurrentOrder}" var="item" >
                 <li>${item}</li>
             </c:forEach>
          </ol>

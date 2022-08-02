@@ -2,7 +2,6 @@ package com.step.hryshkin.service;
 
 import com.step.hryshkin.model.Order;
 
-import java.math.BigDecimal;
 import java.util.Optional;
 
 public interface OrderService {
@@ -14,6 +13,4 @@ public interface OrderService {
     Optional<Order> getLastOrder();
 
     void updateOrder(Order order);
-
-    BigDecimal getTotalPriceByOrderId(long id);
 }

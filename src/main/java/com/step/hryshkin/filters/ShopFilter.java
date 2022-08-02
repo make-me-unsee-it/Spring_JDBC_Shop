@@ -106,6 +106,8 @@ public class ShopFilter implements Filter {
                     }
                 }
             }
+            long id = ((Order) request.getSession().getAttribute("order")).getId();
+            UtilsForOnlineShop.setGoodListForCurrentOrder(request, goodService.getGoodListByOrderId(id));
         }
     }
 

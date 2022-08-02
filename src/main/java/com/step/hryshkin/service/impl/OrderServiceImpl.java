@@ -6,7 +6,6 @@ import com.step.hryshkin.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.math.BigDecimal;
 import java.util.Optional;
 
 @Service
@@ -17,6 +16,11 @@ public class OrderServiceImpl implements OrderService {
     @Autowired
     public OrderServiceImpl(OrderDAO orderDAO) {
         this.orderDAO = orderDAO;
+    }
+
+    @Override
+    public String printTotalPriceForOrder(long id) {
+        return orderDAO.getTotalPriceByOrderId(id).toString();
     }
 
     @Override
@@ -32,15 +36,5 @@ public class OrderServiceImpl implements OrderService {
     @Override
     public void updateOrder(Order order) {
         orderDAO.updateOrder(order);
-    }
-
-    @Override
-    public BigDecimal getTotalPriceByOrderId(long id) {
-        return orderDAO.getTotalPriceByOrderId(id);
-    }
-
-    @Override
-    public String printTotalPriceForOrder(long id) {
-        return orderDAO.getTotalPriceByOrderId(id).toString();
     }
 }

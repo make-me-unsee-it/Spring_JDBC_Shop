@@ -9,4 +9,5 @@ public interface UserDAO {
     void createNewUser(User user);
 
     Optional<User> getUserByName(String userName);
+
 }

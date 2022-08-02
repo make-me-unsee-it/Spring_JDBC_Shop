@@ -11,6 +11,4 @@ public interface GoodService {
     List<Good> getAll();
 
     Optional<Good> getById(long id);
-
-    Optional<Good> getByTitle(String title);
 }

@@ -10,7 +10,7 @@
   <packaging>war</packaging>
 
   <name>SpringJDBCShop Maven Webapp</name>
-  <url>https://github.com/make-me-unsee-it</url>
+  <url>https://github.com/make-me-unsee-it/Spring_JDBC_Shop</url>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -64,6 +64,8 @@
       <groupId>org.springframework</groupId>
       <artifactId>spring-context</artifactId>
     </dependency>
+
+    <!--
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-web</artifactId>
@@ -78,7 +80,7 @@
       <artifactId>thymeleaf-spring5</artifactId>
       <version>${thymeleaf-spring5_version}</version>
     </dependency>
-
+-->
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
@@ -91,6 +93,7 @@
       <version>${jsp-api_version}</version>
       <scope>provided</scope>
     </dependency>
+
     <!-- works without jstl too
     <dependency>
       <groupId>jstl</groupId>

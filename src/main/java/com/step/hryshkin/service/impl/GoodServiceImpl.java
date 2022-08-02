@@ -34,8 +34,4 @@ public class GoodServiceImpl implements GoodService {
         return goodDAO.getById(id);
     }
 
-    @Override
-    public Optional<Good> getByTitle(String title) {
-        return goodDAO.getByTitle(title);
-    }
 }

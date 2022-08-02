@@ -1,7 +1,5 @@
 package com.step.hryshkin.utils;
 
-import com.step.hryshkin.dao.GoodDAO;
-import com.step.hryshkin.dao.impl.GoodDAOImpl;
 import com.step.hryshkin.model.Order;
 import com.step.hryshkin.model.User;
 
@@ -9,7 +7,6 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 public class UtilsForOnlineShop {
-    private static final GoodDAO goodDAO = new GoodDAOImpl();
 
     private UtilsForOnlineShop() {
     }
@@ -31,8 +28,8 @@ public class UtilsForOnlineShop {
         request.getSession().setAttribute("check", check);
     }
 
-    public static List<String> printGoodsForCurrentOrder(long id) {
-        return goodDAO.getGoodListByOrderId(id);
+    public static void setGoodListForCurrentOrder(HttpServletRequest request, List<String> goodsForCurrentOrder) {
+        request.getSession().setAttribute("goodListForCurrentOrder", goodsForCurrentOrder);
     }
 
     public static void stopShopping(HttpServletRequest request) {
